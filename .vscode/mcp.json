@@ -1,0 +1,27 @@
+{
+  "servers": {
+    "localRag": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-local-rag"
+      ],
+      "env": {
+        "DB_PATH": "./.local-rag/lancedb",
+        "CACHE_DIR": "./.local-rag/models"
+      }
+    },
+    "mcp-obsidian": {
+      "command": "uvx",
+      "args": [
+        "mcp-obsidian"
+      ],
+      "env": {
+        "OBSIDIAN_HOST": "127.0.0.1",
+        "OBSIDIAN_PORT": "27124"
+      },
+      "envFile": "${workspaceFolder}/.env"
+    }
+  }
+}
